@@ -1,0 +1,270 @@
+/* Body Styles: */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  margin: 0px 100px;
+  padding: 5;
+  min-height: 100vh;
+  background-color: #dfdfdf;
+}
+
+#app-container,
+#emogi-sction {
+  flex: 1;
+}
+
+#lists {
+  flex: 2;
+}
+/* Container Styles: */
+#app-container {
+  padding: 20px;
+  background-color: #041053;
+  color: rgb(222, 222, 222);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+/* #app-container:hover {
+  width: 600px;
+} */
+
+/* List Styles: */
+#income-list,
+#expenses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* Transaction Item Styles: */
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Button Styles: */
+button {
+  padding: 8px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0063cd;
+  letter-spacing: 0.5px;
+}
+
+/* Input Styles: */
+input {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  max-width: 100%; /* Ensuring the logo doesn't exceed the container's width */
+  height: auto; /* Allowing the logo to scale */
+}
+
+/* styles for the Chart container */
+#chart-container {
+  margin-top: 0px;
+  width: 300px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* Style the canvas element */
+#incomeExpenseChart {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: block; /* Ensuring the canvas is displayed as a block element */
+  margin: 0 auto; /* Centering the canvas within its container */
+}
+
+.material-symbols-outlined {
+  margin-left: 5px;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Center the elements inside the 'emogi' div */
+#emogi {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Setting a lower z-index to ensure it's behind other content */
+}
+
+/* search */
+.searchBlock {
+  display: none;
+}
+.searchBlocks {
+  display: none;
+}
+
+/* Add styles for the Get Financial Advice button */
+#get-advice-button {
+  margin-top: 10px;
+}
+#get-advice-button {
+  padding: 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+#get-advice-button:hover {
+  background: #0063cd;
+  letter-spacing: 0.5px;
+}
+
+/* Compartion */
+.Compartion {
+  margin: 50px;
+  padding: 0;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: 170px;
+}
+.CompartionS {
+  margin: 50px;
+  padding: 0;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: 170px;
+}
+
+#lists {
+  width: 50%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: block;
+  z-index: 2;
+  position: relative;
+  height: auto;
+}
+#header {
+  width: 100%;
+  display: flex;
+}
+#emogi-sction {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Larger than 600px (tablets) */
+@media (min-width: 600px) {
+  body {
+    flex-direction: row;
+  }
+
+  #app-container {
+    width: 50%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  #lists {
+    width: 50%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .Compartion,
+  .CompartionS {
+    margin: 50px; /* Reset margin for larger screens */
+  }
+}
+
+/* Smaller than 600px (phones) */
+@media (max-width: 599px) {
+  body {
+    flex-direction: column;
+  }
+
+  #app-container {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  #lists {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .Compartion,
+  .CompartionS {
+    margin: 80px auto; /* Adjust margin for smaller screens */
+  }
+
+  .logo {
+    width: 100%; /* Adjust logo width for smaller screens */
+    padding-top: 10px;
+  }
+
+  #header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #emogi {
+    flex-direction: column;
+    align-items: center;
+  }
+  #incomeExpenseChart{
+    width: 80%;
+  }
+  #chart-container{
+    width: 280px;
+  }
+  .Cs{
+    position: relative;
+    right: 180px;
+  }
+  .Cc{
+    position: relative;
+    right: 180px;
+  }
+}

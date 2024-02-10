@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InControl | Income and Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <div id="app-container">
+      <div id="header"><img src="img/logo.png" alt="logo" class="logo" /></div>
+
+      <!-- Income Tracker Section: -->
+      <section id="income-inputs" class="left-section">
+        <h2>Income Tracker</h2>
+        <span class="material-symbols-outlined">arrow_downward</span>
+
+        <!-- search -->
+        <div class="searchBlock">
+          <input
+            onkeyup="searchData(this.value, 'income')"
+            placeholder="Search By Source"
+            type="text"
+            id="searchIncome" />
+          <div class="btnSearch">
+            <button onclick="getSearchMood('searchIncome')">Search</button>
+          </div>
+        </div>
+
+        <div id="incomeId">
+          <label for="income-source">Income Source:</label> <br />
+          <input type="text" id="income-source" placeholder="Enter source" />
+          <br />
+          <label for="income-amount">Amount:</label><br />
+          <input type="number" id="income-amount" placeholder="Enter amount" />
+          <br />
+          <button onclick="addIncome()">Add Income</button>
+        </div>
+      </section>
+      <hr />
+
+      <!-- Expense Tracker Section: -->
+      <section>
+        <h2>Expense Tracker</h2>
+        <span class="material-symbols-outlined">arrow_upward</span>
+
+        <!-- search -->
+        <div class="searchBlocks">
+          <input
+            onkeyup="searchData(this.value, 'expense')"
+            placeholder="Search By Category"
+            type="text"
+            id="searchExpense" />
+          <div class="btnSearch">
+            <button onclick="getSearchMood('expense')">Search</button>
+          </div>
+        </div>
+
+        <div id="expenseId">
+          <label for="expense-category">Expense Category:</label>
+          <input
+            type="text"
+            id="expense-category"
+            placeholder="Enter category" />
+          <label for="expense-amount">Amount:</label>
+          <input type="number" id="expense-amount" placeholder="Enter amount" />
+          <button onclick="addExpense()">Add Expense</button>
+        </div>
+      </section>
+      <hr />
+
+      <!-- Balance Section: -->
+      <section>
+        <h2>Remaining Balance: $<span id="remaining-balance">0</span></h2>
+        <!-- remaining-balance chart -->
+        <div id="chart-container">
+          <canvas id="incomeExpenseChart" width="400" height="400"></canvas>
+        </div>
+        <!-- advice button  -->
+        <button id="get-advice-button" onclick="getAdvice()">
+          Get Financial Advice
+        </button>
+      </section>
+    </div>
+
+    <div id="lists">
+      <!-- Print Button Section: -->
+      <section id="print-section">
+        <button onclick="printLists()">Print Lists</button>
+      </section>
+
+      <h2>Income list</h2>
+      <ul id="income-list"></ul>
+      <h3>Total Income: $<span id="total-income">0</span></h3>
+      <section class="Compartion">
+        <div class="Cs">
+          <h3>Compare Sources:</h3>
+          <canvas id="source-pie-chart" width="400" height="400"></canvas>
+        </div>
+      </section>
+      <hr />
+      <h2>Expenses list</h2>
+      <ul id="expenses-list"></ul>
+      <h3>Total Expenses: $<span id="total-expenses">0</span></h3>
+      <section class="CompartionS">
+        <div class="Cc">
+          <h3>Compare Categories:</h3>
+          <canvas id="expense-pie-chart" width="400" height="400"></canvas>
+        </div>
+      </section>
+    </div>
+
+    <section id="emogi-sction">
+      <!-- emoji for balance -->
+      <div id="emogi">
+        <script
+          src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+          type="module"></script>
+        <dotlottie-player
+          id="good"
+          src="https://lottie.host/47f554bd-fb4d-46e0-8134-ed0a41f9eb29/FgxmFdM1zk.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          loop
+          autoplay></dotlottie-player>
+
+        <script
+          src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+          type="module"></script>
+        <dotlottie-player
+          id="bad"
+          src="https://lottie.host/76f6136d-853b-4e80-95eb-581f49ffc21d/2VAEzn4Bfz.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          loop
+          autoplay></dotlottie-player>
+      </div>
+    </section>
+
+    <h1>HI CLASS</h1>
+  </body>
+</html>
